@@ -1,4 +1,5 @@
 # rpgm-tl-tools
 tools related to translating rpg maker games
 
-Currently working on Comparer
+---
+will update read me with details once a tool is actually done
