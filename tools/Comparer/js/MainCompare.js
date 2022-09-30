@@ -11,7 +11,7 @@ const dirComp = require("./../../../lib/general/directory_compare");
 //---------------------------------------------------------//
 
 
-const valid_Jsons = ["Actors.json", "Weapons.json", "Armors.json", "System.json", "Troops.json", "Enemies.json", "CommonEvents.json", "Classes.json", "Skills.json", "States.json", "Map"];
+const valid_Jsons = ["Actors", "Weapons", "Armors", "System", "Troops", "Enemies", "CommonEvents", "Classes", "Skills", "States", "Map"];
 
 
 
