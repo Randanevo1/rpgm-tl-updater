@@ -96,7 +96,7 @@ write_Stuff(results);
 
 // Structure of object 
 // need to pass comparer "list" array
-// [{"id":0, "list":[]}, {"id":1, "list":[]}]
+// [{"id":0, "list":[{any keys}, {any keys}, {any keys}]}, {"id":1, "list":[]}]
 
 function call_comparer (oldParsedJson, newParsedJson) {
 	
@@ -115,7 +115,7 @@ function call_comparer (oldParsedJson, newParsedJson) {
 		else if ( newParsedJson[i]["list"].length == 0 ){ continue; }
 		
 		let results = compare.compare(oldParsedJson[i]["list"], newParsedJson[i]["list"], oldParsedJson[i]["id"]);
-		if ( results.length != 0 ) { compared.push(results); }
+		if ( results["diffrences"].length != 0 ) { compared.push(results); }
 		
 	}
 	
