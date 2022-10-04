@@ -9,7 +9,7 @@ Takes two rpgm mv data directories and compares them to find strings that have b
 To run
 
 - You need to have javascript installed
-- Clone repository
+- download repository
 - Open command line in rpgm-tl-tools\tools\Comparer\js
 - Execute MainCompare.js with the arguments "node MainCompare.js old_data_folder_here new_data_folder_here"
 - After it is done it will save the results in a json in the Comparer folder called "Results.json"
