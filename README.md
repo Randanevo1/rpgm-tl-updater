@@ -6,6 +6,8 @@ started this to hopefully help in the translation of rpg maker games
 # Comparer
 Takes two rpgm mv data directories and compares them to find strings that have been changed
 
+currently only supports rpgm MV
+
 To run
 
 - You need to have javascript installed
