@@ -1,5 +1,6 @@
 # rpgm-tl-tools
 tools related to translating rpg maker games
+started this to hopefully help in the translating of rpg maker games 
 
 # Comparer
 Takes two rpgm mv data directories and compares them to find strings that have been changed
