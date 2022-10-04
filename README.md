@@ -14,5 +14,5 @@ To run
 - Execute MainCompare.js with the arguments "node MainCompare.js old_data_folder_here new_data_folder_here"
 - After it is done it will save the results in a json in the Comparer folder called "Results.json"
 
-Results.json will have the names of the files that were comparedin "differences". 
+Results.json will have the names of the files that were compared in "differences". 
 it will have all the id's that were different and what entries in that id were diffrent as well as how many diffrences in that entry
