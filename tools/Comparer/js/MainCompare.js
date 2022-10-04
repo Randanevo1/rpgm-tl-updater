@@ -12,28 +12,29 @@ const dirComp = require("./../../../lib/general/directory_compare");
 //---------------------------------------------------------//
 
 
-const old_dir_path = "./dataold";//process.argv[process.argv.length -3];
-const new_dir_path = "./datanew";//process.argv[process.argv.length -2];
+const old_dir_path = process.argv[process.argv.length -2];
+const new_dir_path = process.argv[process.argv.length -1];
 
-//let stuff = load_json("./datanew/CommonEvents.json")
-//let fsasd = jparse.ce_Parser(stuff)
-//write_Stuff(fsasd)
-//return;
+if ( fs.existsSync(old_dir_path) == false )     { return "invalid old directory path"; }
+else if ( fs.existsSync(new_dir_path) == false ){ return "invalid new directory path"; }
 
-const valid_file_names = ["Actors", "Weapons", "Armors", "System", "Troops", "Enemies", "CommonEvents", "Classes", "Skills", "States", "Map"];
+const valid_file_mv_names = ["Actors", "Weapons", "Armors", "System", "Troops", "Enemies", "CommonEvents", "Classes", "Skills", "States", "Map"];
 
 const oldFiles  = fileGet.get_dir_files(old_dir_path, "json");
 const newFiles  = fileGet.get_dir_files(new_dir_path, "json");
 
-const oldNames  = dirFilt.file_filter(oldFiles, valid_file_names);
-const newNames  = dirFilt.file_filter(newFiles, valid_file_names);
+// get files that have the same name as "valid_file_mv_names"
+const oldNames  = dirFilt.file_filter(oldFiles, valid_file_mv_names);
+const newNames  = dirFilt.file_filter(newFiles, valid_file_mv_names);
 
+// gets names of files that are in both old & new folders and names of missing/additonal files
 const compareResults = dirComp.compare_dir_files(oldNames, newNames);
 
 const sizes = dirComp.get_sizes(old_dir_path, new_dir_path, compareResults["inBoth"]);
 
 let   changedFiles = [];
 
+// Get files that have been changed based off thier file sizes
 for (let i = 0; i < sizes.length; ++i) {
 	
 	if (sizes[i][1] != 0){
@@ -46,6 +47,8 @@ for (let i = 0; i < sizes.length; ++i) {
 
 
 let results = [];
+// Loops through changed files 
+// calls the correct parser on each file than gives it to comparer
 for (let n = 0; n < changedFiles.length; ++n){
 	
 	let oldData = load_json(old_dir_path + "\\" + changedFiles[n]);
@@ -90,7 +93,7 @@ for (let n = 0; n < changedFiles.length; ++n){
 	}
 }
 
-write_Stuff(results);
+write_to_json(results);
 
 //----------------------------------------------------------//
 
@@ -131,10 +134,9 @@ function load_json(fPath){
 	return data;
 }
 
-function write_Stuff (arr){
-	const fs = require('fs');
+function write_to_json (arr){
 	let stuff = JSON.stringify(arr, null, 1);
-	fs.writeFile("Results.json", stuff, (err) => {
+	fs.writeFile("./../Results.json", stuff, (err) => {
 		if (err) {
 			console.error(err);
 		}
