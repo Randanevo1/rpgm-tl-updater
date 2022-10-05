@@ -18,7 +18,6 @@ To run from command line
 - example path "old":"C:\\\Users\\\user\\\Desktop\\\game/ with/ spaces\\\www\\\data"
 - Open command line in rpgm-tl-tools\tools\Comparer\js
 - Execute MainCompare.js with "node MainCompare.js"
-- After it is done it will save the results in a json in the Comparer folder called "Results.json"
 
 To run with .exe
 
