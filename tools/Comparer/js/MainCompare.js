@@ -11,14 +11,12 @@ const dirComp = require("./../../../lib/general/directory_compare");
 
 //---------------------------------------------------------//
 
-
+console.log("Starting comparison please wait.");
 let data = fs.readFileSync("./paths.js", {encoding: "utf8"}); 
 eval?.(data);
 
 const old_dir_path = $paths["old"];
 const new_dir_path = $paths["new"];
-
-
 
 if ( fs.existsSync(old_dir_path) == false )     { return "invalid old directory path"; }
 else if ( fs.existsSync(new_dir_path) == false ){ return "invalid new directory path"; }
@@ -97,8 +95,8 @@ for (let n = 0; n < changedFiles.length; ++n){
 		
 	}
 }
-
 write_to_json(results);
+console.log("Comparison complete!")
 
 //----------------------------------------------------------//
 
@@ -141,7 +139,7 @@ function load_json(fPath){
 
 function write_to_json (arr){
 	let stuff = JSON.stringify(arr, null, 1);
-	fs.writeFile("./../Results.json", stuff, (err) => {
+	fs.writeFile("./Results.json", stuff, (err) => {
 		if (err) {
 			console.error(err);
 		}
