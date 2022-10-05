@@ -12,8 +12,13 @@ const dirComp = require("./../../../lib/general/directory_compare");
 //---------------------------------------------------------//
 
 
-const old_dir_path = process.argv[process.argv.length -2];
-const new_dir_path = process.argv[process.argv.length -1];
+let data = fs.readFileSync("./paths.js", {encoding: "utf8"}); 
+eval?.(data);
+
+const old_dir_path = $paths["old"];
+const new_dir_path = $paths["new"];
+
+
 
 if ( fs.existsSync(old_dir_path) == false )     { return "invalid old directory path"; }
 else if ( fs.existsSync(new_dir_path) == false ){ return "invalid new directory path"; }
@@ -48,7 +53,7 @@ for (let i = 0; i < sizes.length; ++i) {
 
 let results = [];
 // Loops through changed files 
-// calls the correct parser on each file than gives it to comparer
+// calls the correct parser on each file than gives it to call_comparer
 for (let n = 0; n < changedFiles.length; ++n){
 	
 	let oldData = load_json(old_dir_path + "\\" + changedFiles[n]);
