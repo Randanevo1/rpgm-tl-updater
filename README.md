@@ -22,6 +22,7 @@ To run from command line
 To run with .exe
 
 - Open paths.js
+- Add the old and new directory paths
 - Paths need all \ to be replaced with \\\ and spaces need / 
 - Example path "old":"C:\\\Users\\\user\\\Desktop\\\game/ with/ spaces\\\www\\\data"
 - run exe
