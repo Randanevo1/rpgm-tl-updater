@@ -8,7 +8,7 @@ Takes two rpgm mv data directories and compares them to find strings that have b
 
 currently only supports rpgm MV
 
-To run
+To run from command line
 
 - You need to have javascript installed
 - download repository
@@ -16,10 +16,16 @@ To run
 - Add the old and new directory paths
 - paths need all \ to be replaced with \\\ and spaces need / 
 - example path "old":"C:\\\Users\\\user\\\Desktop\\\game/ with/ spaces\\\www\\\data"
-
 - Open command line in rpgm-tl-tools\tools\Comparer\js
 - Execute MainCompare.js with "node MainCompare.js"
 - After it is done it will save the results in a json in the Comparer folder called "Results.json"
+
+To run with .exe
+
+- Open paths.js
+- Paths need all \ to be replaced with \\\ and spaces need / 
+- Example path "old":"C:\\\Users\\\user\\\Desktop\\\game/ with/ spaces\\\www\\\data"
+- run exe
 
 Results.json will have the names of the files that were compared in "differences". 
 
