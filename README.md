@@ -13,14 +13,14 @@ To run from command line
 - You need to have javascript installed
 - download repository
 - Open the paths.js file in rpgm-tl-tools\tools\Comparer\js
-- Add the old and new directory paths for the game
+- Add the old and new directory paths for the game in the ``
 - Open command line in rpgm-tl-tools\tools\Comparer\js
 - Execute MainCompare.js with "node MainCompare.js"
 
 To run with .exe
 
 - Open paths.js
-- Add the old and new directory paths for the game
+- Add the old and new directory paths for the game in the ``
 - run exe
 
 Results.json will have the names of the files that were compared in "differences". 
