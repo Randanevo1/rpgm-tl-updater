@@ -1,1 +1,0 @@
-var $paths = {"old":String.raw``, "new":String.raw``};
