@@ -5,3 +5,5 @@
 Py/.env
 Py/tests
 Docs
+test_*
+*.pyc
