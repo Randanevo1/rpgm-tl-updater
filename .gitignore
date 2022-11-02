@@ -1,9 +1,8 @@
 
 *.txt
 *.json
+*.pyc
 
 Py/.env
-Py/tests
+Py/Tests
 Docs
-test_*
-*.pyc
